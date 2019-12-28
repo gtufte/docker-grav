@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  grav:
+    container_name: grav
+    hostname: grav
+    image: grav
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+      args:
+        GRAV_VERSION: $GRAV_VERSION
+    volumes:
+      - ./src:/var/www/html
+    ports:
+      - 80:8000
+
+
+
+

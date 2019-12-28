@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  grav:
+    container_name: grav
+    hostname: grav
+    image: php:apache
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    volumes:
+      - ./src:/var/www/html
+    ports:
+      - 80:80
+    environment:
+      APACHE_RUN_USER: app
+      APACHE_RUN_GROUP: app
+
+
+
+

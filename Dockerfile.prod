@@ -1,0 +1,4 @@
+FROM php:apache
+
+RUN groupadd --gid 1000 app \
+ && useradd  --uid 1000 --gid 1000 app
